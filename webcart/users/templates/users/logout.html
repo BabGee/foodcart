@@ -1,0 +1,18 @@
+{% extends "homecart/base.html" %}
+
+{% block title %} Register Foodcart {% endblock title %}
+
+{% block intro %}
+
+{% endblock intro %}
+
+{% block restaurant  %}
+
+<div class="alert alert-danger" role="alert">
+ <p>You have been logged out</p>
+</div>
+
+
+<a href="{% url 'login' %}">Login Again</a>
+
+{% endblock %}

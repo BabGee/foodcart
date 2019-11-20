@@ -1,0 +1,41 @@
+{% extends "homecart/base.html" %}
+
+{% load static %}
+
+
+{% block title %} About Foodcart {% endblock title %}
+
+{% block hero %}
+<!-- Hero section -->
+<section class="hero-section set-bg" data-setbg="{% static 'homecart/img/isha.png' %}">
+    <div class="hero-slider owl-carousel">
+        <div class="hs-item">
+            <div class="hs-left"><img src="{% static 'homecart/img/breko.jpg' %}" alt=""></div>
+            <div class="hs-right">
+                <div class="hs-content">
+                    <h2><span>Have</span> <br>It Delivered</h2>
+                    <a href="" class="site-btn">Login!</a>
+                </div>
+            </div>
+        </div>
+        <div class="hs-item">
+            <div class="hs-left"><img src="{% static 'homecart/img/sal.jpeg' %}" alt=""></div>
+            <div class="hs-right">
+                <div class="hs-content">
+                    <h2><span>At Your</span> <br>Crib In Minutes</h2>
+                    <a href="" class="site-btn">Register</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Hero section end -->
+
+{% endblock hero %}
+
+    {% block intro %}   {% endblock intro %}
+
+
+    {% block restaurant  %} {% endblock restaurant%}
+
+   

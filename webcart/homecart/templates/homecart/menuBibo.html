@@ -1,0 +1,34 @@
+{% extends "foodcart/base.html" %}
+
+{% load static %}
+
+<link href="{% static 'foodcart/home.css'%}" rel="stylesheet">
+
+{% block title %}Bibo Menu{% endblock %}
+
+{% block jumbotron %}
+
+	<div class="jumbotron">
+		<h1 class="whiteFont">KILIFI FOOD JOINTS</h1>
+		<p class="whiteFont">Experience the wide variety of Food Offered by these Exotic Hotels in Kilifi</p>
+	</div>
+
+{% endblock %}
+
+{% block content %}
+
+<!-- Three columns of text below the carousel -->
+    <div class="row">
+   {% for food in menu_list %}
+      <div class="col-lg-4">
+        <img class="bd-placeholder-img rounded-circle" src="{% static 'foodcart/images/salad.jpg' %}" height="100" width="200">
+        <p class="text-info bg-dark">{{food.title}}</p>
+    <p class="text-info bg-dark"> KSHS {{ food.price }}</p>
+        <p><a class="btn btn-lg btn-primary" href="#" role="button">Add to cart</a></p>
+   </div><!-- /.col-sm-3 -->
+   {% endfor %}
+
+  </div><!-- /.container -->
+
+
+{% endblock content %}

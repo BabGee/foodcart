@@ -1,0 +1,143 @@
+{% extends 'homecart/base.html' %}
+{% load static %}
+	
+{% block title %} FoodCart Home {% endblock title %}
+
+{% block hero %}
+		<!-- Hero section -->
+		<section class="hero-section set-bg" data-setbg="{% static 'homecart/img/isha.png' %}">
+			<div class="hero-slider owl-carousel">
+				<div class="hs-item">
+					<div class="hs-left"><img src="{% static 'homecart/img/breko.jpg' %}" alt=""></div>
+					<div class="hs-right">
+						<div class="hs-content">
+							<h2><span>Have</span> <br>It Delivered</h2>
+							{% if not user.is_authenticated %}
+								<a href="{% url 'login' %}" class="site-btn">Login!</a>
+							{% else %}
+								<a href="" class="site-btn">Best Meals</a>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+				<div class="hs-item">
+					<div class="hs-left"><img src="{% static 'homecart/img/sal.jpeg' %}" alt=""></div>
+					<div class="hs-right">
+						<div class="hs-content">
+							<h2><span>At Your</span> <br>Crib In Minutes</h2>
+							{% if not user.is_authenticated %}
+								<a href="{% url 'register' %}" class="site-btn">Register</a>
+							{% else %}
+								<a href="" class="site-btn">Best Offers</a>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Hero section end -->
+
+{% endblock hero %}
+
+{% block intro %}
+	<!-- Intro section -->
+	<section class="intro-section spad pb-0">
+		<div class="section-title">
+			<h2>Yummy Yummy Offers</h2>
+			<p>The best of Today</p>
+		</div>
+		<div class="intro-slider">
+			<ul class="slidee">
+				<li>
+					<div class="intro-item">
+						<figure>
+							<img src="{% static 'homecart/img/intro/brek.jpg' %}" alt="#">
+						</figure>
+						<div class="product-info">
+							<h5>Strawberry Burger</h5>
+							<p>Kshs 550</p>
+							<a href="#" class="site-btn btn-line">View Menu</a>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="intro-item">
+						<figure>
+							<img src="{% static 'homecart/img/intro/breko.jpg' %}" alt="#">
+						</figure>
+						<div class="product-info">
+							<h5>Doughnut Burger</h5>
+							<p>Kshs 250</p>
+							<a href="#" class="site-btn btn-line">View Menu</a>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="intro-item">
+						<figure>
+							<img src="{% static 'homecart/img/intro/burger.jpeg' %}" alt="#">
+							<div class="bache">NEW</div>
+						</figure>
+						<div class="product-info">
+							<h5>Chips & Paneer Burger</h5>
+							<p>Kshs 450</p>
+							<a href="#" class="site-btn btn-line">View Menu</a>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="intro-item">
+						<figure>
+							<img src="{% static 'homecart/img/intro/burgerchips.jpeg' %}" alt="#">
+						</figure>
+						<div class="product-info">
+							<h5>Chips & Burger</h5>
+							<p>Kshs 350</p>
+							<a href="#" class="site-btn btn-line">View Menu</a>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="intro-item">
+						<figure>
+							<img src="{% static 'homecart/img/intro/sal.jpeg' %}" alt="#">
+						</figure>
+						<div class="product-info">
+							<h5>Grilled Paneer Tikka</h5>
+							<p>Kshs 650</p>
+							<a href="#" class="site-btn btn-line">View Menu</a>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="container">
+			<div class="scrollbar">
+				<div class="handle">
+					<div class="mousearea"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Intro section end -->
+	{% endblock intro %}
+
+	{% block restaurant %}
+	<!-- Restaurants section id="product-section spad" -->
+	<section class="product-filter">
+		<div class="container marketing">
+			<div class="row">
+				{% for restaurant in restaurants %}
+				<div class="col-lg-4">
+							<img src="{% static 'homecart/img/products/coder.jpeg' %}" alt="">
+							<h6>{{restaurant.name}}</h6>
+							<p>{{restaurant.location}}</p>
+							<a href="#" class="btn btn-primary">View Menu</a>				
+				</div>
+				{% endfor %}	
+			</div>
+		</div>
+	</section>
+	
+	<!-- Restaurants section end -->
+	{% endblock restaurant %}

@@ -1,0 +1,20 @@
+{% extends "foodcart/base.html" %}
+
+{% block content %}
+
+{% if message %}
+	<div>
+		{{ message }}
+	</div>
+{% endif %}
+<div class="navbar-nav">
+	<form action="{% url 'foodcart-login' %}" method="POST">
+	 {% csrf_token %}
+	 <input name="username" type="text"/>
+	 <input name="password" type="password"/>
+	 <input type="submit" value="Login"/>
+
+	</form>
+</div>
+
+{% endblock %}

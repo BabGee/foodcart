@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <title>{% block title %} {% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="The Foodcart eCommerce Template">
+    <meta name="keywords" content="foocart, eCommerce, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link href="{% static 'homecart/img/favicon.ico' %}" rel="shortcut icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{% static 'homecart/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'homecart/css/font-awesome.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'homecart/css/owl.carousel.css' %}" />
+    <link rel="stylesheet" href="{% static 'homecart/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'homecart/css/animate.css' %}" />
+    <link rel="stylesheet" href="{% static 'homecart/css/main.css' %}" />
+
+
+    <!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navbar -->
+    {% include 'global_biz/navbar.html' %}
+    <!-- End Navbar -->
+
+    {% block hero %} {% endblock %}
+
+    {% block intro %} {% endblock  %}
+
+    {% block featured %} {% endblock  %}
+
+    {% block product  %} {% endblock %}
+
+    {% block blog  %} {% endblock %}
+
+    <!-- footer -->
+
+    {% include 'homecart/footer.html' %}
+
+    <!--====== Javascripts & Jquery ======-->
+    <script src="{% static 'homecart/js/jquery-3.2.1.min.js'%}"></script>
+    <script src="{% static 'homecart/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'homecart/js/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'homecart/js/mixitup.min.js'%}"></script>
+    <script src="{% static 'homecart/js/sly.min.js'%}"></script>
+    <script src="{% static 'homecart/js/jquery.nicescroll.min.js'%}"></script>
+    <script src="{% static 'homecart/js/main.js'%}"></script>
+</body>
+
+</html>
