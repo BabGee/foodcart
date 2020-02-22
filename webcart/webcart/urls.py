@@ -19,11 +19,18 @@ from users import views as users_views
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
+from homecart.views import (
+    product_detail, 
+    restaurant_detail, 
+    add_to_cart, 
+    remove_from_cart, 
+    remove_single_product_from_cart,
+    OrderSummaryView,
+    )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     #my paths
-   	path('global', include('global_biz.urls')),
 	path('', include('homecart.urls')),
     path('register', users_views.register, name='register'),
 	path('profile', users_views.profile, name='profile'),
@@ -41,6 +48,13 @@ urlpatterns = [
 	path('password-reset-complete',
 	auth_views.PasswordResetCompleteView.as_view(template_name='users/password_reset_complete.html'),
 	name='password_reset_complete'),
+	path('products/<int:pk>/', product_detail, name='product-detail'),
+	path('restaurant/<int:pk>/', restaurant_detail, name='restaurant-detail'),
+    path('order-summary/', OrderSummaryView.as_view(), name='order-summary'),
+    path('add-to-cart/<int:pk>/', add_to_cart, name='add-to-cart'),
+    path('remove-from-cart/<int:pk>/', remove_from_cart, name='remove-from-cart'),
+    path('remove-product-from-cart/<int:pk>/', remove_single_product_from_cart, name='remove-single-product-from-cart'),
+
 ]
 
 if settings.DEBUG:
